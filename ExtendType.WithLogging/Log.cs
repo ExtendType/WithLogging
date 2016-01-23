@@ -31,9 +31,9 @@ namespace ExtendType.WithLogging
 		private static IEnumerable<string> Path(Type sourceType)
 		{
 			string[] segments = sourceType.FullName.Split('.');
-			for (int index = 0; index < segments.Length; index++)
+			for (int index = 1; index < segments.Length; index++)
 			{
-				yield return String.Join(".", segments.Take(index - 1));
+				yield return String.Join(".", segments.Take(index));
 			}
 		}
 
